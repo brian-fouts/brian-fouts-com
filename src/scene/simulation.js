@@ -5,33 +5,32 @@ import EffectComposer from './renderer/composer'
 import WebGLRenderer from './renderer/webgl'
 import Camera from './camera'
 import Fog from './fog'
-
 import SceneManager from './manager'
-import ResourceManager from './../managers/resource'
+import ResourceManager from './resource'
 import LightingManager from './lighting/manager'
 import Star from './objects/star'
 import Nebula from './objects/nebula'
+import config from './config'
 
 
 class Simulation {
-    constructor(config, canvas) {
-        this.config = config;
+    constructor(canvas) {
         this.canvas = canvas;
-        this.resourceManager = new ResourceManager();
+        this.resourceManager = new ResourceManager(config);
         this.sceneManager = new SceneManager();
-        this.lightingManager = new LightingManager(this.config);
-        this.camera = new Camera(this.config);
+        this.lightingManager = new LightingManager(config);
+        this.camera = new Camera(config);
         this.renderer = new WebGLRenderer(this.canvas);
         this.composer = new EffectComposer(
-            this.config,
+            config,
             this.renderer.renderer,
         );
-        this.fog = new Fog(this.config);
+        this.fog = new Fog(config);
     }
 
     init() {
         this.resourceManager.init().then(() => {
-            if(this.config.debugMode) {
+            if(config.debugMode) {
                 this.enableDebugFeatures();
             }
             this.composer.init(
@@ -72,16 +71,16 @@ class Simulation {
     }
 
     addNebula() {
-        const nebula = new Nebula(this.config.nebula, this.resourceManager);
+        const nebula = new Nebula(config.nebula, this.resourceManager);
         nebula.addToScene(this.sceneManager.scene);
         this.sceneManager.addSceneObject(nebula);
     }
     populateStars() {
-        this.config.stars.data.forEach(starData => {
+        config.stars.data.forEach(starData => {
             const star = new Star(
                 this.resourceManager,
-                this.config.stars.shader.vertex,
-                this.config.stars.shader.fragment,
+                config.stars.shader.vertex,
+                config.stars.shader.fragment,
                 starData.radius,
                 starData.numSegments,
                 starData.temperature,
