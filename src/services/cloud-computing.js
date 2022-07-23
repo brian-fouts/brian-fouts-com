@@ -7,7 +7,7 @@ function CloudCategory(props) {
 }
 function CloudServices(props) {
     return (
-        <div className="text-left">
+        <div className="text-center">
             <ul className="flex break-normal" {...props}>{props.children}</ul>
         </div>
     )
@@ -30,7 +30,7 @@ function Cloud(props) {
 
 function CloudName(props) {
     return (
-        <div className="m-2 text-center">
+        <div className="m-2">
             <h3><b>{props.children}</b></h3>
         </div>
     )

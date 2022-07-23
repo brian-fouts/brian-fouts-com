@@ -12,7 +12,7 @@ import { Routes, Route } from "react-router-dom";
 export default function App() {
   return (
     <div id="outer-container" className="absolute top-0 flex justify-center w-full h-full">
-      <div id="inner container" className="text-center w-[800px] bg-blue-50">
+      <div id="inner container" className="text-center w-[800px] bg-blue-50 overflow-y-scroll">
         <Header />
         <div className="p-5">
           <Routes>
