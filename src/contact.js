@@ -25,7 +25,10 @@ function ContactForm(props) {
                 method: 'POST',
                 body: JSON.stringify({"body":body}),
                 headers: {
-                  "Content-type": "application/json; charset=UTF-8"
+                  "Content-type": "application/json; charset=UTF-8",
+                  "Access-Control-Allow-Headers" : "Content-Type",
+                  "Access-Control-Allow-Origin": "https://www.brian-fouts.com",
+                  "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
                 }
             }).then(() => {
                 setBody("")
@@ -72,6 +75,7 @@ export default function Contact() {
     const [statusMessage, setStatusMessage] = useState("");
     return (
         <div>
+            <div>Please enter your mesage below</div>
             <StatusBox text={statusMessage}/>
             <ContactForm setStatusMessage={setStatusMessage}/>
         </div>

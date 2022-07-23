@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function HeaderItem(props) {
     return <li className="p-5">
@@ -10,9 +10,6 @@ function HeaderItem(props) {
 }
 
 function HeaderNavLink(props) {
-    const onClick = () => {
-        console.log(props)
-    }
     return (
         <NavLink className="px-4 py-2 no-underline rounded-t whitespace-nowrap hover:underline underline-offset-8" {...props}>{props.children}</NavLink>
     )
