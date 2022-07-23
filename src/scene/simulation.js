@@ -42,10 +42,22 @@ class Simulation {
             this.sceneManager.scene.fog = this.fog.fog;
             this.lightingManager.init(this.sceneManager.scene);
             this.populateScene()
+            
+            window.addEventListener(
+                'resize', 
+                () => this.onWindowResize(this.camera.camera, this.renderer.renderer), 
+                false
+            );
             this.render();
         })
     }
 
+    onWindowResize(camera, renderer){
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
     enableDebugFeatures() {
         const gridHelper = new THREE.GridHelper(200, 50)
         this.sceneManager.scene.add(gridHelper);
