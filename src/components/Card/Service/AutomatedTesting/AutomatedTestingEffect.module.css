@@ -1,0 +1,7 @@
+.testingCard {
+    background-image: url('/images/cards/automated-testing.jpg');
+    background-size: 175%;
+    background-clip: content-box;
+    background-position: -70px 0px;
+}
+

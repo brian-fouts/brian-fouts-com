@@ -1,0 +1,113 @@
+
+/* Card Container */
+.card_container {
+    --num-columns: 4;
+    --spacing: 8px;
+    --card-height: 250px;
+    --card-width: 200px;
+    --text-bg-size: 125px;
+    --border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    max-width: calc(var(--num-columns) * var(--card-width) + var(--spacing) * (var(--num-columns) - 1));
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card_container:hover > .card > .card_border {
+    opacity: 1;
+  }
+  
+  /* Card */
+  .card {
+    background-color: rgba(150,150,150, 0.8);
+    color: #FBFBFB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: var(--card-height);
+    width: var(--card-width);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  .card::before,
+  .card > .card_overlay,
+  .card > .card_border {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    content: "";
+    transition: opacity 500ms;
+  }
+  
+  .card_overlay {
+    background: radial-gradient(
+      600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.3),
+      transparent 40%
+    );
+    z-index: 10;
+    opacity: 1;
+    pointer-events: none;
+  }
+  
+  .card > .card_border {
+    background: radial-gradient(
+      600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.6),
+      transparent 60%
+    );
+    z-index: 1;
+  }
+  
+  .card:hover > .card_border {
+    opacity: 1;
+  }
+  
+  /* Card Content */
+  .card > .card_content {
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    background-color: rgba(24,24,24, 0.8);
+    border-radius: var(--border-radius);
+    margin: 1px;
+    z-index: 3;
+    position: relative;
+  }
+
+   /* Card Content */
+   .card > .card_content > .card_content_container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+  }
+  .card_label {
+    width: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .card_label span {
+    color: white;
+    background: radial-gradient(
+      500px circle at 50% 50%,
+      rgba(24,24,24, 1),
+      transparent 40%
+    );
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px var(--border-radius) var(--border-radius);
+    text-transform: uppercase;
+  }

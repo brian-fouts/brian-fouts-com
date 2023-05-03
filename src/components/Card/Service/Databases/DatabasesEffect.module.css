@@ -1,0 +1,7 @@
+.databasesCard {
+    background-image: url('/images/cards/databases.jpg');
+    background-size: cover;
+    background-clip: content-box;
+    background-position: -100px 0px;
+}
+

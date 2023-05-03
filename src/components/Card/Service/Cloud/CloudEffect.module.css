@@ -1,0 +1,6 @@
+.cloudCard {
+    background-image: url('/images/cards/cloud.jpg');
+    background-size: cover;
+    background-clip: content-box;
+}
+

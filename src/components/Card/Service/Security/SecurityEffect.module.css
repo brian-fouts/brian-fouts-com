@@ -1,0 +1,19 @@
+.securityCard {
+    background-image: url('/images/cards/security.jpg');
+    background-size: cover;
+    background-clip: content-box;
+    background-position: -250px 0px;
+}
+
+.securityEffect {
+    z-index: 3;
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.security {
+    font-family: "Space Mono", monospace;
+}

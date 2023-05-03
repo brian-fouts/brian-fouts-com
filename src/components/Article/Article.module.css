@@ -1,0 +1,19 @@
+/* Section */
+.article, .article_section {
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    color: var(--text-color);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-grow: 1;
+}
+
+.article_section {
+    width: inherit;
+}
+
+/* Article */
+.article_section li {
+    list-style-type: disc;
+}
