@@ -38,10 +38,7 @@ function ContactForm(props: any) {
                 method: 'POST',
                 body: JSON.stringify({"body":body}),
                 headers: {
-                  "Content-type": "application/json; charset=UTF-8",
-                  "Access-Control-Allow-Headers" : "Content-Type",
-                  "Access-Control-Allow-Origin": "https://www.brian-fouts.com",
-                  "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+                  "Content-type": "application/json; charset=UTF-8"
                 }
             }).then(() => {
                 setBody("")
@@ -58,6 +55,7 @@ function ContactForm(props: any) {
     }
     return (
         <div className={visibility}>
+            <div>Please enter your mesage below</div>
             <form onSubmit={submitForm}>
                 <div>
                     <textarea
@@ -83,7 +81,6 @@ const ContactPage = () => {
         <Article title="Contact">
             <ArticleBody>
                 <ArticleSection>
-                    <div>Please enter your mesage below</div>
                     <StatusBox text={statusMessage}/>
                     <ContactForm setStatusMessage={setStatusMessage}/>
                 </ArticleSection>
