@@ -10,7 +10,7 @@ const NebulaProject = () => (
             <ArticleList title="Links">
                 <ul>
                     <li><a href="https://github.com/brian-fouts/nebula/" target="_blank">Source</a></li>
-                    <li><a href="https://demos.brian-fouts.com/" target="_blank">Demo</a></li>
+                    <li><a href="https://nebula.brian-fouts.com/" target="_blank">Demo</a></li>
                 </ul>
             </ArticleList>
             <ArticleList title="Languages">
