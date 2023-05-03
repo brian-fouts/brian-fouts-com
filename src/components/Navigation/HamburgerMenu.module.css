@@ -1,0 +1,22 @@
+
+.hamburger_menu {
+  --size: var(--logo-size);
+  position: absolute;
+  height: var(--size);
+  width: var(--size);
+  right: var(--padding);
+  top: calc(var(--padding) + 5px);
+}
+
+.hamburger_menu img {
+    width: var(--size);
+    height: var(--size);
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .hamburger_menu {
+    display: none;
+  }
+}

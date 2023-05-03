@@ -1,0 +1,8 @@
+.webDevelopmentCard {
+    background-image: url('/images/cards/web-development.jpg');
+    background-size: cover;
+    background-clip: content-box;
+    background-position: -210px 0px;
+    background-size: 220%;
+}
+

@@ -1,0 +1,5 @@
+.devOpsCard {
+    background-image: url('/images/cards/devops.jpg');
+    background-size: cover;
+    background-clip: content-box;
+}
